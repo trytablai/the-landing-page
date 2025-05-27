@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -88,4 +87,9 @@ export default {
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
+	safelist: [
+		'animate-float-slow',
+		'animate-float-medium',
+		'animate-float-fast'
+	],
 } satisfies Config;

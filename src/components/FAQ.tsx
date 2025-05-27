@@ -1,4 +1,3 @@
-
 import {
   Accordion,
   AccordionContent,
@@ -35,16 +34,16 @@ const faqItems = [
 
 const FAQ = () => {
   return (
-    <section id="faq" className="py-20 bg-black relative overflow-hidden">
+    <section id="faq" className="py-20 bg-black relative overflow-hidden scroll-mt-80">
       {/* Gradient spots moved away from edges */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-primary/25 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-72 h-72 bg-secondary/25 rounded-full blur-3xl"></div>
-        <div className="absolute top-2/3 left-1/6 w-56 h-56 bg-primary/25 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-1/2 right-1/5 w-64 h-64 bg-primary-500/15 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-primary/25 rounded-full blur-3xl animate-float-throb" style={{animationDelay: '0s'}}></div>
+        <div className="absolute bottom-1/3 left-1/4 w-72 h-72 bg-secondary/25 rounded-full blur-3xl animate-float-throb" style={{animationDelay: '0.5s'}}></div>
+        <div className="absolute top-2/3 left-1/6 w-56 h-56 bg-primary/25 rounded-full blur-2xl animate-float-throb" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-1/2 right-1/5 w-64 h-64 bg-primary-500/15 rounded-full blur-3xl animate-float-throb" style={{animationDelay: '1.5s'}}></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 pt-20">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -62,10 +61,10 @@ const FAQ = () => {
                 value={`item-${index}`}
                 className="bg-card rounded-lg border border-gray-800 overflow-hidden"
               >
-                <AccordionTrigger className="px-6 py-4 text-white hover:no-underline hover:bg-gray-800/50">
-                  <span className="text-left font-medium">{item.question}</span>
+                <AccordionTrigger className="px-6 py-4 text-white hover:no-underline hover:bg-gray-800/50 text-base md:text-lg font-semibold">
+                  <span className="text-left">{item.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pt-2 pb-6 text-gray-300">
+                <AccordionContent className="px-6 pt-2 pb-6 text-gray-300 text-sm md:text-base">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>

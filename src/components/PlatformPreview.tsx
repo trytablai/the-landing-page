@@ -1,16 +1,15 @@
-
 const PlatformPreview = () => {
   return (
-    <section id="platform-preview" className="py-20 bg-black relative overflow-hidden">
+    <section id="platform-preview" className="py-20 bg-black relative overflow-hidden scroll-mt-80">
       {/* Gradient spots moved away from edges */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-primary/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-secondary/25 rounded-full blur-3xl"></div>
-        <div className="absolute top-2/3 left-3/4 w-40 h-40 bg-primary/20 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-1/2 left-1/6 w-64 h-64 bg-secondary-500/15 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-primary/30 rounded-full blur-3xl animate-float-throb" style={{animationDelay: '0s'}}></div>
+        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-secondary/25 rounded-full blur-3xl animate-float-throb" style={{animationDelay: '0.5s'}}></div>
+        <div className="absolute top-2/3 left-3/4 w-40 h-40 bg-primary/20 rounded-full blur-2xl animate-float-throb" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-1/2 left-1/6 w-64 h-64 bg-secondary-500/15 rounded-full blur-3xl animate-float-throb" style={{animationDelay: '1.5s'}}></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 pt-20">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">See tabl in Action</h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">

@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -55,16 +54,16 @@ const CTA = () => {
   };
 
   return (
-    <section className="py-20 bg-black relative overflow-hidden" id="waitlist">
+    <section className="py-20 bg-black relative overflow-hidden scroll-mt-80" id="waitlist">
       {/* Enhanced gradient spots for this section - moved away from edges */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/6 left-1/2 w-30 h-30 bg-primary/30 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/25 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-primary/20 rounded-full blur-2xl"></div>
-        <div className="absolute top-2/3 right-1/6 w-56 h-56 bg-primary-500/12 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/6 left-1/2 w-30 h-30 bg-primary/30 rounded-full blur-3xl animate-float-throb" style={{animationDelay: '0s'}}></div>
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/25 rounded-full blur-3xl animate-float-throb" style={{animationDelay: '0.5s'}}></div>
+        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-primary/20 rounded-full blur-2xl animate-float-throb" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-2/3 right-1/6 w-56 h-56 bg-primary-500/12 rounded-full blur-3xl animate-float-throb" style={{animationDelay: '1.5s'}}></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 pt-20">
         <div className="max-w-4xl mx-auto bg-gradient-to-r rounded-2xl overflow-hidden shadow-xl">
           <div className="p-10 md:p-16 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
