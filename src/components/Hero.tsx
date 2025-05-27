@@ -30,7 +30,7 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center text-center">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <div className="mb-6 inline-block">
               <img 
                 src="/images/tablCubeLogo.png" 
@@ -38,10 +38,10 @@ const Hero = () => {
                 className="h-20 w-20 mx-auto mb-4 fade-in" 
               />
               <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-4 fade-in">
-                From Prompt to <span className="text-primary">3D CAD Model</span>
+              AI CAD <span className="text-primary"> Assistant </span> for Engineers Ready to Move<span className="text-primary"> Fast</span>. 
               </h1>
               <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto fade-in">
-                The AI-powered hardware development environment that converts one-sentence prompts into fully parameterized 3D CAD models in seconds.
+                Prompt. Iterate. Integrate.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 fade-in">
