@@ -1,0 +1,89 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 0%; /* Changed to black */
+    --foreground: 210 40% 98%;
+
+    --card: 0 0% 7%; /* Dark card bg */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 0 0% 9%; /* Dark popover bg */
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 162 100% 39%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 162 100% 31%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 215.4 16.3% 70%;
+
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 162 100% 39%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+    font-family: 'Inter', sans-serif;
+  }
+
+  p {
+    @apply leading-relaxed;
+    font-family: 'Inter', sans-serif;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scale-hover {
+  transition: transform 0.3s ease-in-out;
+}
+
+.scale-hover:hover {
+  transform: scale(1.03);
+}

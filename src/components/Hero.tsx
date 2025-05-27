@@ -1,0 +1,69 @@
+
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
+
+const Hero = () => {
+  const handleGetStarted = () => {
+    const ctaSection = document.querySelector('#waitlist');
+    if (ctaSection) {
+      ctaSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleViewPlatform = () => {
+    const platformSection = document.querySelector('#platform-preview');
+    if (platformSection) {
+      platformSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-black relative overflow-hidden">
+      {/* Enhanced gradient spots with stronger tabl green visibility */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/25 rounded-full blur-3xl"></div>
+        <div className="absolute top-3/4 right-1/4 w-20 h-20 bg-primary/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-3/4 w-64 h-64 bg-primary/15 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-1/6 w-72 h-72 bg-primary/18 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/6 right-1/3 w-56 h-56 bg-primary/12 rounded-full blur-2xl"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="flex flex-col items-center text-center">
+          <div className="max-w-3xl mx-auto">
+            <div className="mb-6 inline-block">
+              <img 
+                src="/images/tablCubeLogo.png" 
+                alt="tabl Logo" 
+                className="h-20 w-20 mx-auto mb-4 fade-in" 
+              />
+              <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-4 fade-in">
+                From Prompt to <span className="text-primary">3D CAD Model</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto fade-in">
+                The AI-powered hardware development environment that converts one-sentence prompts into fully parameterized 3D CAD models in seconds.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 fade-in">
+              <Button 
+                className="rounded-full text-base px-8 py-6 bg-secondary hover:bg-secondary flex items-center gap-2"
+                onClick={handleGetStarted}
+              >
+                Join the Waitlist <ArrowRight size={18} />
+              </Button>
+              <Button 
+                variant="outline" 
+                className="rounded-full text-base px-8 py-6 border-gray-600 text-white hover:bg-gray-800"
+                onClick={handleViewPlatform}
+              >
+                View Platform
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
