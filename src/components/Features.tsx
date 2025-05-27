@@ -26,6 +26,59 @@ const features = [{
   image: "/lovable-uploads/24939a9c-98b0-42a4-a4ef-81b6e8d4479f.png"
 }];
 
+interface FeatureCardProps {
+  feature: typeof features[0];
+  idx: number;
+}
+
+const FeatureCard = ({ feature, idx }: FeatureCardProps) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        setVisible(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+    if (cardRef.current) observer.observe(cardRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const direction = idx % 2 === 0 ? 'left' : 'right';
+  const baseAnim = 'transition-all duration-700 ease-out opacity-0';
+  const animIn = visible
+    ? 'opacity-100 translate-x-0'
+    : direction === 'left'
+      ? '-translate-x-32'
+      : 'translate-x-32';
+  const flexDirection = idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse';
+
+  return (
+    <div
+      ref={cardRef}
+      className={`bg-black/90 rounded-3xl shadow-2xl flex flex-col ${flexDirection} items-stretch h-[400px] max-w-6xl mx-auto w-full border border-white/80 transition-transform duration-300 hover:scale-[1.01] hover:shadow-[0_8px_32px_0_rgba(0,0,0,0.8)] ${baseAnim} ${animIn} relative overflow-hidden`}
+    >
+      <div className={`flex-shrink-0 w-full md:w-1/2 h-56 md:h-full flex overflow-hidden`}> 
+        <div className={`bg-gray-900 flex items-center justify-center w-full h-full shadow-md ${idx % 2 === 0 ? 'md:rounded-l-3xl md:rounded-r-none' : 'md:rounded-r-3xl md:rounded-l-none'}`}> 
+          {feature.icon}
+        </div>
+      </div>
+      <div className="flex-1 flex flex-col justify-center text-left px-8 py-8">
+        <h3 className="text-4xl font-extrabold text-white mb-6 leading-tight">
+          {feature.title.split(' ').map((word, i) => 
+            word.toLowerCase() === 'instant' || word.toLowerCase() === 'smart' || word.toLowerCase() === 'export' || word.toLowerCase() === 'engineering' ? 
+              <span key={i} className="text-primary">{word} </span> : 
+              <span key={i}>{word} </span>
+          )}
+        </h3>
+        <p className="text-gray-300 text-xl leading-relaxed">{feature.description}</p>
+      </div>
+    </div>
+  );
+};
+
 const Features = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
@@ -48,7 +101,7 @@ const Features = () => {
       } else {
         api.scrollNext();
       }
-    }, 8000); // 8 seconds
+    }, 8000);
 
     return () => clearInterval(interval);
   }, [api, current]);
@@ -94,59 +147,9 @@ const Features = () => {
           </p>
         </div>
         <div className="flex flex-col gap-16">
-          {features.map((feature, idx) => {
-            // Animation logic
-            const cardRef = useRef<HTMLDivElement>(null);
-            const [visible, setVisible] = useState(false);
-            useEffect(() => {
-              const observer = new window.IntersectionObserver(
-                ([entry]) => {
-                  setVisible(entry.isIntersecting);
-                },
-                { threshold: 0.2 }
-              );
-              if (cardRef.current) observer.observe(cardRef.current);
-              return () => observer.disconnect();
-            }, []);
-
-            // Animation direction
-            const direction = idx % 2 === 0 ? 'left' : 'right';
-            const baseAnim = 'transition-all duration-700 ease-out opacity-0';
-            const animIn = visible
-              ? 'opacity-100 translate-x-0'
-              : direction === 'left'
-                ? '-translate-x-32'
-                : 'translate-x-32';
-
-            // Alternate image placement
-            const flexDirection = idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse';
-
-            return (
-              <div
-                key={idx}
-                ref={cardRef}
-                className={`bg-black/90 rounded-3xl shadow-2xl flex flex-col ${flexDirection} items-stretch h-[400px] max-w-6xl mx-auto w-full border border-white/80 transition-transform duration-300 hover:scale-[1.01] hover:shadow-[0_8px_32px_0_rgba(0,0,0,0.8)] ${baseAnim} ${animIn} relative overflow-hidden`}
-              >
-                {/* Icon/Image flush to edge */}
-                <div className={`flex-shrink-0 w-full md:w-1/2 h-56 md:h-full flex overflow-hidden`}> 
-                  <div className={`bg-gray-900 flex items-center justify-center w-full h-full shadow-md ${idx % 2 === 0 ? 'md:rounded-l-3xl md:rounded-r-none' : 'md:rounded-r-3xl md:rounded-l-none'}`}> 
-                    {feature.icon}
-                  </div>
-                </div>
-                {/* Text right */}
-                <div className="flex-1 flex flex-col justify-center text-left px-8 py-8">
-                  <h3 className="text-4xl font-extrabold text-white mb-6 leading-tight">
-                    {feature.title.split(' ').map((word, i) => 
-                      word.toLowerCase() === 'instant' || word.toLowerCase() === 'smart' || word.toLowerCase() === 'export' || word.toLowerCase() === 'engineering' ? 
-                        <span key={i} className="text-primary">{word} </span> : 
-                        <span key={i}>{word} </span>
-                    )}
-                  </h3>
-                  <p className="text-gray-300 text-xl leading-relaxed">{feature.description}</p>
-                </div>
-              </div>
-            );
-          })}
+          {features.map((feature, idx) => (
+            <FeatureCard key={idx} feature={feature} idx={idx} />
+          ))}
         </div>
       </div>
     </section>

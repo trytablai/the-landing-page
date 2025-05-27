@@ -54,11 +54,14 @@ const Hero = () => {
         <div className="flex flex-col items-center text-center">
           <div className="max-w-4xl mx-auto">
             <div className="mb-6 inline-block">
-              <img 
-                src="/images/tablCubeLogo.png" 
-                alt="tabl Logo" 
-                className="h-20 w-20 mx-auto mb-4 hero-fade-in" 
-              />
+              <div className="flex items-center justify-center gap-2 bg-gray-800/50 backdrop-blur-sm rounded-full px-4 py-1.5 border border-gray-700 mb-8 w-fit mx-auto">
+                <img 
+                  src="/images/tablCubeLogo.png" 
+                  alt="Fusen Logo" 
+                  className="h-5 w-5" 
+                />
+                <span className="text-sm text-gray-300 whitespace-nowrap">Backed by Fusen</span>
+              </div>
               <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">
                 {`AI CAD Assistant for Engineers Ready to Move Fast.`.split(' ').map((word, i, arr) => (
                   <React.Fragment key={i}>
@@ -129,7 +132,7 @@ export default Hero;
     }
   }
 
-  .hover\:animate-throb:hover {
+  .hover:animate-throb:hover {
     animation: throb 1s ease-in-out infinite !important;
   }
 `}</style>

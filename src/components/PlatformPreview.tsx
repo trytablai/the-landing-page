@@ -1,6 +1,6 @@
 const PlatformPreview = () => {
   return (
-    <section id="platform-preview" className="py-20 bg-black relative overflow-hidden scroll-mt-80">
+    <section id="platform-preview" className="py-0 bg-black relative overflow-hidden scroll-mt-80">
       {/* Gradient spots moved away from edges */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-primary/30 rounded-full blur-3xl animate-float-throb" style={{animationDelay: '0s'}}></div>

@@ -126,7 +126,7 @@ export default CTA;
     }
   }
 
-  .hover\:animate-throb:hover {
+  .hover:animate-throb:hover {
     animation: throb 1s ease-in-out infinite;
   }
 `}</style>

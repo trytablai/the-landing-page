@@ -68,7 +68,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full flex justify-center fixed top-0 left-0 right-0 z-50 bg-transparent pt-2 mb-8">
+    <nav className="w-full flex justify-center fixed top-2 left-0 right-0 z-50 bg-transparent pt-2 mb-8">
       <div className="flex items-center w-full max-w-5xl bg-black rounded-xl px-6 py-2 shadow-md border border-gray-200">
         {/* Logo */}
         <div className="flex items-center cursor-pointer" onClick={handleLogoClick}>
