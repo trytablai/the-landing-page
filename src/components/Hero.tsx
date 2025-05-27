@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import React from 'react';
 
 const Hero = () => {
   const handleGetStarted = () => {
@@ -58,23 +59,40 @@ const Hero = () => {
                 alt="tabl Logo" 
                 className="h-20 w-20 mx-auto mb-4 hero-fade-in" 
               />
-              <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-4 fade-in">
-              AI CAD <span className="text-primary"> Assistant </span> for Engineers Ready to Move<span className="text-primary"> Fast</span>. 
+              <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">
+                {`AI CAD Assistant for Engineers Ready to Move Fast.`.split(' ').map((word, i, arr) => (
+                  <React.Fragment key={i}>
+                    <span
+                      className={`inline-block ${
+                        word === 'Assistant' || word === 'Fast.'
+                          ? 'text-primary'
+                          : ''
+                      }`}
+                      style={{ 
+                        opacity: 0,
+                        animation: `fadeIn 0.5s ease-out ${0.1 * i}s forwards`
+                      }}
+                    >
+                      {word}
+                    </span>
+                    {i < arr.length - 1 && ' '}
+                  </React.Fragment>
+                ))}
               </h1>
-              <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto fade-in">
+              <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto fade-in" style={{animationDelay: '2.5s'}}>
                 Prompt. Iterate. Integrate.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 fade-in">
               <Button 
-                className="rounded-lg text-base px-8 py-6 bg-secondary hover:bg-secondary flex items-center gap-2"
+                className="rounded-lg text-base px-8 py-6 bg-secondary flex items-center gap-2 hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300"
                 onClick={handleGetStarted}
               >
                 Join the Waitlist <ArrowRight size={18} />
               </Button>
               <Button 
                 variant="outline" 
-                className="rounded-lg text-base px-8 py-6 border-gray-600 text-white hover:bg-gray-800"
+                className="rounded-lg text-base px-8 py-6 border-gray-600 text-white hover:bg-gray-800 hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300"
                 onClick={handleViewPlatform}
               >
                 View Platform
@@ -90,18 +108,28 @@ const Hero = () => {
 export default Hero;
 
 <style>{`
-.hero-fade-in {
-  opacity: 0;
-  transform: translateX(-40px);
-  animation: hero-fade-in-slide 1.2s cubic-bezier(0.4,0,0.2,1) forwards;
-}
-.hero-fade-in-delay-1 { animation-delay: 0.3s; }
-.hero-fade-in-delay-2 { animation-delay: 0.6s; }
-.hero-fade-in-delay-3 { animation-delay: 0.9s; }
-@keyframes hero-fade-in-slide {
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
-}
+
+  @keyframes throb {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .hover\:animate-throb:hover {
+    animation: throb 1s ease-in-out infinite !important;
+  }
 `}</style>

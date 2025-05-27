@@ -97,7 +97,7 @@ const CTA = () => {
                 </div>
                 <Button 
                   type="submit"
-                  className="w-full bg-secondary text-white hover:bg-gray-300 rounded-full px-8 py-6 text-base"
+                  className="w-full bg-secondary text-white rounded-full px-8 py-6 text-base hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Joining..." : "Join Waitlist"}
@@ -112,3 +112,21 @@ const CTA = () => {
 };
 
 export default CTA;
+
+<style>{`
+  @keyframes throb {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .hover\:animate-throb:hover {
+    animation: throb 1s ease-in-out infinite;
+  }
+`}</style>

@@ -108,7 +108,7 @@ const Navbar = () => {
         {/* Join Waitlist Button */}
         <div className="hidden md:flex items-center ml-6">
           <Button 
-            className="rounded-lg bg-secondary hover:bg-secondary transition-transform duration-200 hover:scale-105 hover:shadow-xl"
+            className="rounded-lg bg-secondary flex items-center gap-2 hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300"
             onClick={handleGetStarted}
           >
             Join Waitlist
@@ -150,7 +150,7 @@ const Navbar = () => {
               FAQ
             </a>
             <Button 
-              className="w-full rounded-lg bg-primary hover:bg-secondary transition-transform duration-200 hover:scale-105 hover:shadow-xl"
+              className="w-full rounded-lg bg-secondary flex items-center gap-2 hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300"
               onClick={handleGetStarted}
             >
               Join Waitlist
