@@ -56,7 +56,7 @@ const Hero = () => {
             <div className="mb-6 inline-block">
               <div className="flex items-center justify-center gap-2 bg-gray-800/50 backdrop-blur-sm rounded-full px-4 py-1.5 border border-gray-700 mb-8 w-fit mx-auto">
                 <img 
-                  src="/images/tablCubeLogo.png" 
+                  src="/images/fusen.png" 
                   alt="Fusen Logo" 
                   className="h-5 w-5" 
                 />
