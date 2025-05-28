@@ -97,7 +97,7 @@ const CTA = () => {
                 </div>
                 <Button 
                   type="submit"
-                  className="w-full bg-secondary text-white rounded-full px-8 py-6 text-base hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300"
+                  className="w-full bg-secondary text-white rounded-lg px-8 py-6 text-base hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300 font-thinbold"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Joining..." : "Join Waitlist"}

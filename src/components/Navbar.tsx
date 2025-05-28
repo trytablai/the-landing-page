@@ -85,21 +85,21 @@ const Navbar = () => {
           <div className="flex items-center space-x-12">
             <a 
               href="#platform-preview" 
-              className="text-white hover:text-primary font-medium text-sm cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
+              className="text-white hover:text-primary font-thinbold text-base cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
               onClick={handleViewPlatform}
             >
               View Platform
             </a>
             <a 
               href="#features" 
-              className="text-white hover:text-primary font-medium text-sm cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
+              className="text-white hover:text-primary font-thinbold text-base cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
               onClick={handleFeatures}
             >
               Features
             </a>
             <a 
               href="#faq" 
-              className="text-white hover:text-primary font-medium text-sm cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
+              className="text-white hover:text-primary font-thinbold text-base cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
               onClick={handleNewSection}
             >
               FAQ
@@ -109,7 +109,7 @@ const Navbar = () => {
         {/* Join Waitlist Button */}
         <div className="hidden md:flex items-center ml-6">
           <Button 
-            className="rounded-lg bg-secondary flex items-center gap-2 hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300"
+            className="rounded-lg bg-secondary flex items-center gap-2 hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300 text-base px-6 py-3 font-thinbold"
             onClick={handleGetStarted}
           >
             Join Waitlist
@@ -131,27 +131,27 @@ const Navbar = () => {
           <div className="flex flex-col space-y-4">
             <a
               href="#platform-preview"
-              className="text-white hover:text-primary font-medium text-sm cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
+              className="text-white hover:text-primary font-thinbold text-base cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
               onClick={handleViewPlatform}
             >
               View Platform
             </a>
             <a
               href="#features"
-              className="text-white hover:text-primary font-medium text-sm cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
+              className="text-white hover:text-primary font-thinbold text-base cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
               onClick={handleFeatures}
             >
               Features
             </a>
             <a
               href="#faq"
-              className="text-white hover:text-primary font-medium text-sm cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
+              className="text-white hover:text-primary font-thinbold text-base cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
               onClick={handleNewSection}
             >
               FAQ
             </a>
             <Button 
-              className="w-full rounded-lg bg-secondary flex items-center gap-2 hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300"
+              className="w-full rounded-lg bg-secondary flex items-center gap-2 hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300 text-base px-6 py-3 font-thinbold"
               onClick={handleGetStarted}
             >
               Join Waitlist

@@ -82,11 +82,11 @@ const Features = () => {
     <section id="features" className="py-10 bg-black relative overflow-hidden scroll-mt-80">
       {/* Enhanced gradient spots moved closer to center with reduced opacity */}
       <div className="absolute inset-0 overflow-hidden z-0">
-        <div className="absolute top-[10%] left-[10%] w-[30rem] h-[30rem] bg-primary/30 rounded-full blur-[150px]" style={{animation: 'float-slow 16s ease-in-out infinite', animationDelay: '0s'}}></div>
-        <div className="absolute bottom-[10%] right-[10%] w-[35rem] h-[35rem] bg-secondary/25 rounded-full blur-[170px]" style={{animation: 'float-medium 12s ease-in-out infinite', animationDelay: '0.5s'}}></div>
+        <div className="absolute top-[15%] left-[10%] w-[20rem] h-[20rem] bg-primary/30 rounded-full blur-[150px]" style={{animation: 'float-slow 16s ease-in-out infinite', animationDelay: '0s'}}></div>
+        <div className="absolute bottom-[10%] right-[10%] w-[25rem] h-[25rem] bg-secondary/25 rounded-full blur-[170px]" style={{animation: 'float-medium 12s ease-in-out infinite', animationDelay: '0.5s'}}></div>
         <div className="absolute top-[20%] right-[20%] w-[25rem] h-[25rem] bg-primary/35 rounded-full blur-[130px]" style={{animation: 'float-fast 8s ease-in-out infinite', animationDelay: '1s'}}></div>
-        <div className="absolute bottom-[20%] left-[20%] w-[30rem] h-[30rem] bg-secondary/30 rounded-full blur-[150px]" style={{animation: 'float-slow 16s ease-in-out infinite', animationDelay: '1.5s'}}></div>
-        <div className="absolute top-[30%] left-[30%] w-[20rem] h-[20rem] bg-primary/25 rounded-full blur-[110px]" style={{animation: 'float-medium 12s ease-in-out infinite', animationDelay: '2s'}}></div>
+        <div className="absolute bottom-[20%] left-[20%] w-[20rem] h-[20rem] bg-secondary/30 rounded-full blur-[150px]" style={{animation: 'float-slow 16s ease-in-out infinite', animationDelay: '1.5s'}}></div>
+        <div className="absolute top-[40%] left-[30%] w-[20rem] h-[20rem] bg-primary/25 rounded-full blur-[110px]" style={{animation: 'float-medium 12s ease-in-out infinite', animationDelay: '2s'}}></div>
         <style>{`
           @keyframes float-slow {
             0% { transform: translateY(0) scale(1); }

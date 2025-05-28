@@ -117,13 +117,13 @@
   100% { transform: translate(0, 0) scale(1); }
 }
 .animate-float-slow {
-  animation: float-slow 30s linear infinite;
+  animation: float-slow 25s linear infinite;
 }
 .animate-float-medium {
-  animation: float-medium 22s linear infinite;
+  animation: float-medium 18s linear infinite;
 }
 .animate-float-fast {
-  animation: float-fast 15s linear infinite;
+  animation: float-fast 13s linear infinite;
 }
 .animate-float-throb {
   animation: float-throb 11s linear infinite;
