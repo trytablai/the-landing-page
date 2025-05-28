@@ -1,8 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Zap, Settings, FileText, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import type { CarouselApi } from "@/components/ui/carousel";
 
 const features = [{
   icon: <Zap className="h-16 w-16 text-primary" />,
@@ -58,14 +56,14 @@ const FeatureCard = ({ feature, idx }: FeatureCardProps) => {
   return (
     <div
       ref={cardRef}
-      className={`bg-black/90 rounded-3xl shadow-2xl flex flex-col ${flexDirection} items-stretch h-[400px] max-w-6xl mx-auto w-full border border-white/80 transition-transform duration-300 hover:scale-[1.01] hover:shadow-[0_8px_32px_0_rgba(0,0,0,0.8)] ${baseAnim} ${animIn} relative overflow-hidden`}
+      className={`flex flex-col ${flexDirection} items-center gap-12 py-20 w-full ${baseAnim} ${animIn}`}
     >
-      <div className={`flex-shrink-0 w-full md:w-1/2 h-56 md:h-full flex overflow-hidden`}> 
-        <div className={`bg-gray-900 flex items-center justify-center w-full h-full shadow-md ${idx % 2 === 0 ? 'md:rounded-l-3xl md:rounded-r-none' : 'md:rounded-r-3xl md:rounded-l-none'}`}> 
+      <div className="flex-shrink-0 w-full md:w-1/2 flex items-center justify-center px-8"> 
+        <div className="bg-gray-900 p-8 rounded-2xl w-full max-w-md"> 
           {feature.icon}
         </div>
       </div>
-      <div className="flex-1 flex flex-col justify-center text-left px-8 py-8">
+      <div className="flex-1 flex flex-col justify-center text-left w-full md:w-1/2 px-8">
         <h3 className="text-4xl font-extrabold text-white mb-6 leading-tight">
           {feature.title.split(' ').map((word, i) => 
             word.toLowerCase() === 'instant' || word.toLowerCase() === 'smart' || word.toLowerCase() === 'export' || word.toLowerCase() === 'engineering' ? 
@@ -80,34 +78,8 @@ const FeatureCard = ({ feature, idx }: FeatureCardProps) => {
 };
 
 const Features = () => {
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-    setCurrent(api.selectedScrollSnap());
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
-  }, [api]);
-  
-  useEffect(() => {
-    if (!api) return;
-    const interval = setInterval(() => {
-      if (current === features.length - 1) {
-        api.scrollTo(0);
-      } else {
-        api.scrollNext();
-      }
-    }, 8000);
-
-    return () => clearInterval(interval);
-  }, [api, current]);
-  
   return (
-    <section id="features" className="py-20 bg-black relative overflow-hidden scroll-mt-80">
+    <section id="features" className="py-10 bg-black relative overflow-hidden scroll-mt-80">
       {/* Enhanced gradient spots moved closer to center with reduced opacity */}
       <div className="absolute inset-0 overflow-hidden z-0">
         <div className="absolute top-[10%] left-[10%] w-[30rem] h-[30rem] bg-primary/30 rounded-full blur-[150px]" style={{animation: 'float-slow 16s ease-in-out infinite', animationDelay: '0s'}}></div>
@@ -140,12 +112,6 @@ const Features = () => {
       </div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10 pt-20">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Powerful CAD Features</h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Everything you need to go from concept to manufacture, powered by AI and built for engineers.
-          </p>
-        </div>
         <div className="flex flex-col gap-16">
           {features.map((feature, idx) => (
             <FeatureCard key={idx} feature={feature} idx={idx} />

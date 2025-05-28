@@ -7,10 +7,6 @@ import {
 
 const faqItems = [
   {
-    question: "What is tabl?",
-    answer: "tabl is an AI-powered hardware development environment built for mechanical engineers. It converts simple one-sentence prompts into fully parameterized 3D CAD models, complete with STEP/STL files and an engineering agent to answer design questions."
-  },
-  {
     question: "How does tabl work?",
     answer: "Simply describe what you want to create in plain English, and tabl's AI generates a complete 3D CAD model with smart parameters. You can then tweak features, adjust dimensions, and iterate on your design in real-time without starting from scratch."
   },
@@ -34,7 +30,7 @@ const faqItems = [
 
 const FAQ = () => {
   return (
-    <section id="faq" className="py-20 bg-black relative overflow-hidden scroll-mt-80">
+    <section id="faq" className="py-10 bg-black relative overflow-hidden scroll-mt-80">
       {/* Gradient spots moved away from edges */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-primary/25 rounded-full blur-3xl animate-float-throb" style={{animationDelay: '0s'}}></div>

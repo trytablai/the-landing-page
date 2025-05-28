@@ -54,7 +54,7 @@ const CTA = () => {
   };
 
   return (
-    <section className="py-20 bg-black relative overflow-hidden scroll-mt-80" id="waitlist">
+    <section className="py-10 bg-black relative overflow-hidden scroll-mt-80" id="waitlist">
       {/* Enhanced gradient spots for this section - moved away from edges */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/6 left-1/2 w-30 h-30 bg-primary/30 rounded-full blur-3xl animate-float-throb" style={{animationDelay: '0s'}}></div>
@@ -67,10 +67,10 @@ const CTA = () => {
         <div className="max-w-4xl mx-auto bg-gradient-to-r rounded-2xl overflow-hidden shadow-xl">
           <div className="p-10 md:p-16 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Join our waitlist
+              Join Our <span className="text-primary">Waitlist</span>
             </h2>
             <p className="text-white/90 text-xl mb-8 max-w-2xl mx-auto">
-              Join thousands of businesses that are already using tabl to unlock the full potential of their data.
+              Join hundreds of engineers getting early access to the fastest way to design with AI.
             </p>
             
             <form onSubmit={handleSubmit} className="max-w-md mx-auto">
