@@ -62,7 +62,7 @@ const Hero = () => {
                 />
                 <span className="text-sm text-gray-300 whitespace-nowrap font-inter">Backed by Fusen</span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">
+              <p className="text-4xl md:text-6xl text-white leading-tight mb-4">
                 {`AI CAD Assistant for Engineers Ready to Move Fast.`.split(' ').map((word, i, arr) => (
                   <React.Fragment key={i}>
                     <span
@@ -81,21 +81,21 @@ const Hero = () => {
                     {i < arr.length - 1 && ' '}
                   </React.Fragment>
                 ))}
-              </h1>
+              </p>
               <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto fade-in font-inter" style={{animationDelay: '2.5s'}}>
                 Prompt. Iterate. Integrate.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 fade-in">
               <Button 
-                className="rounded-lg text-base px-8 py-6 bg-secondary flex items-center gap-2 hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300 font-thinbold"
+                className="rounded-lg text-base px-8 py-6 bg-secondary flex items-center gap-2 hover:animate-throb shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300 font-bold"
                 onClick={handleGetStarted}
               >
                 Join the Waitlist <ArrowRight size={18} />
               </Button>
               <Button 
                 variant="outline" 
-                className="rounded-lg text-base px-8 py-6 border-gray-600 text-white hover:bg-gray-800 hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300 font-thinbold"
+                className="rounded-lg text-base px-8 py-6 border-gray-600 text-white hover:bg-gray-800 hover:animate-throb shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300 font-bold"
                 onClick={handleViewPlatform}
               >
                 View Platform

@@ -30,7 +30,7 @@ const faqItems = [
 
 const FAQ = () => {
   return (
-    <section id="faq" className="py-10 bg-black relative overflow-hidden scroll-mt-80">
+    <section id="faq" className="py-10 pb-28 bg-black relative overflow-hidden scroll-mt-80">
       {/* Gradient spots moved away from edges */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-primary/25 rounded-full blur-3xl animate-float-throb" style={{animationDelay: '0s'}}></div>
@@ -42,10 +42,10 @@ const FAQ = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10 pt-20">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+            <p className="text-3xl md:text-5xl text-white mb-4">
+              Frequently Asked <span className="text-primary">Questions</span>
+            </p>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               Everything you need to know about tabl and how it revolutionizes the CAD design process.
             </p>
           </div>

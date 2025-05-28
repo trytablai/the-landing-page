@@ -64,13 +64,13 @@ const FeatureCard = ({ feature, idx }: FeatureCardProps) => {
         </div>
       </div>
       <div className="flex-1 flex flex-col justify-center text-left w-full md:w-1/2 px-8">
-        <h3 className="text-4xl font-extrabold text-white mb-6 leading-tight">
+        <p className="text-4xl text-white mb-6 leading-tight">
           {feature.title.split(' ').map((word, i) => 
             word.toLowerCase() === 'instant' || word.toLowerCase() === 'smart' || word.toLowerCase() === 'export' || word.toLowerCase() === 'engineering' ? 
               <span key={i} className="text-primary">{word} </span> : 
               <span key={i}>{word} </span>
           )}
-        </h3>
+        </p>
         <p className="text-gray-300 text-xl leading-relaxed">{feature.description}</p>
       </div>
     </div>

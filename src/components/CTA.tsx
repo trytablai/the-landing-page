@@ -66,10 +66,10 @@ const CTA = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10 pt-20">
         <div className="max-w-4xl mx-auto bg-gradient-to-r rounded-2xl overflow-hidden shadow-xl">
           <div className="p-10 md:p-16 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <p className="text-3xl md:text-4xl text-white mb-4">
               Join Our <span className="text-primary">Waitlist</span>
-            </h2>
-            <p className="text-white/90 text-xl mb-8 max-w-2xl mx-auto">
+            </p>
+            <p className="text-gray-400 text-xl mb-8 max-w-2xl mx-auto">
               Join hundreds of engineers getting early access to the fastest way to design with AI.
             </p>
             
@@ -97,7 +97,7 @@ const CTA = () => {
                 </div>
                 <Button 
                   type="submit"
-                  className="w-full bg-secondary text-white rounded-lg px-8 py-6 text-base hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300 font-thinbold"
+                  className="w-full bg-secondary text-white rounded-lg px-8 py-6 text-base hover:animate-throb shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300 font-bold"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Joining..." : "Join Waitlist"}

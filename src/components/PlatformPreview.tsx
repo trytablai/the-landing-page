@@ -11,9 +11,9 @@ const PlatformPreview = () => {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 pt-20">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+          <p className="text-3xl md:text-5xl mb-4 text-white">
             CAD turned into <span className="text-primary">Conversation</span>
-          </h2>
+          </p>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Watch how engineers transform their ideas into manufacturable 3D models with just a simple prompt.
           </p>
