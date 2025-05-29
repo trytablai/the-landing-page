@@ -51,7 +51,7 @@ export function MyModel({ scale = 1 }) {
 
 export default function AnimatedCube({ scale = 1, useModel = false }) {
   return (
-    <div style={{ width: 900, height: 160, background: 'transparent', position: 'relative' }}>
+    <div style={{ width: 900, height: 300, background: 'transparent', position: 'relative' }}>
       {/* Background grid canvas (fixed, non-interactive) */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
         <Canvas style={{ background: 'transparent', width: '100%', height: '100%' }} camera={{ position: [0, -3, -3], fov: 60 }}>

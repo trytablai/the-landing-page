@@ -64,23 +64,40 @@ const FeatureCard = ({ feature, idx, cardRef, iconRef }: FeatureCardProps) => {
       className={`flex flex-col ${flexDirection} items-center gap-12 py-20 w-full ${baseAnim} ${animIn}`}
     >
       <div className="flex-shrink-0 w-full md:w-1/2 flex items-center justify-center px-8"> 
-        <div ref={iconRef} className="bg-gray-900 p-8 rounded-2xl w-full max-w-md flex items-center justify-center"> 
+        <div
+          ref={iconRef}
+          className={`bg-gray-900 ${(idx === 0 ) ? ' p-0' : 'p-8'} rounded-2xl w-full max-w-md flex items-center justify-center${(idx === 1 || idx === 0) ? ' overflow-hidden' : ''}`}
+          style={idx === 1 ? { borderRadius: '1rem' } : {}}>
           {/* Place AnimatedCube for first and second card, with slider for second */}
           {idx === 0 ? (
-            <AnimatedCube useModel={true} scale={0.02} />
+            <AnimatedCube useModel={true} scale={0.015} />
           ) : idx === 1 ? (
             <div className="flex flex-col items-center w-full">
               <AnimatedCube scale={cubeScale} />
-              <input
-                type="range"
-                min={0.5}
-                max={1.25}
-                step={0.01}
-                value={cubeScale}
-                onChange={e => setCubeScale(Number(e.target.value))}
-                style={{ width: '80%', marginTop: 16 }}
-              />
-              <div style={{ color: '#b9fbc0', fontSize: 14, marginTop: 4 }}>Scale: {cubeScale.toFixed(2)}</div>
+              <div className="w-full flex flex-col gap-2 mt-4">
+                <label className="text-gray-200 text-sm mb-1" htmlFor="cube-scale-slider">
+                  Cube Scale
+                </label>
+                <div className="flex items-center gap-3 w-full">
+                  <input
+                    id="cube-scale-slider"
+                    type="range"
+                    min={0.5}
+                    max={1.15}
+                    step={0.01}
+                    value={cubeScale}
+                    onChange={e => setCubeScale(Number(e.target.value))}
+                    className="w-full h-3 rounded-full bg-gray-700 accent-primary outline-none transition-all"
+                    style={{
+                      appearance: 'none',
+                      WebkitAppearance: 'none',
+                    }}
+                  />
+                  <div className="bg-gray-800 text-white rounded-full px-4 py-1 text-sm min-w-[48px] text-center border border-gray-600">
+                    {cubeScale.toFixed(2)}
+                  </div>
+                </div>
+              </div>
             </div>
           ) : (
             feature.icon
