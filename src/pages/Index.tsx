@@ -54,8 +54,8 @@ const Index = () => {
         <Navbar />
         <Hero />
         <PlatformPreview />
-        <CTA />
         <Features />
+        <CTA />
         <FAQ />
         <Footer />
       </div>

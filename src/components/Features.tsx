@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Zap, Settings, FileText, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import AnimatedCube from './AnimatedCube';
 
 const features = [{
   icon: <Zap className="h-16 w-16 text-primary" />,
@@ -27,11 +28,15 @@ const features = [{
 interface FeatureCardProps {
   feature: typeof features[0];
   idx: number;
+  cardRef?: React.RefObject<HTMLDivElement>;
+  iconRef?: React.RefObject<HTMLDivElement>;
 }
 
-const FeatureCard = ({ feature, idx }: FeatureCardProps) => {
-  const cardRef = useRef<HTMLDivElement>(null);
+const FeatureCard = ({ feature, idx, cardRef, iconRef }: FeatureCardProps) => {
+  const localRef = useRef<HTMLDivElement>(null);
+  const ref = cardRef || localRef;
   const [visible, setVisible] = useState(false);
+  const [cubeScale, setCubeScale] = useState(1);
 
   useEffect(() => {
     const observer = new window.IntersectionObserver(
@@ -40,9 +45,9 @@ const FeatureCard = ({ feature, idx }: FeatureCardProps) => {
       },
       { threshold: 0.2 }
     );
-    if (cardRef.current) observer.observe(cardRef.current);
+    if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, []);
+  }, [ref]);
 
   const direction = idx % 2 === 0 ? 'left' : 'right';
   const baseAnim = 'transition-all duration-700 ease-out opacity-0';
@@ -55,12 +60,31 @@ const FeatureCard = ({ feature, idx }: FeatureCardProps) => {
 
   return (
     <div
-      ref={cardRef}
+      ref={ref}
       className={`flex flex-col ${flexDirection} items-center gap-12 py-20 w-full ${baseAnim} ${animIn}`}
     >
       <div className="flex-shrink-0 w-full md:w-1/2 flex items-center justify-center px-8"> 
-        <div className="bg-gray-900 p-8 rounded-2xl w-full max-w-md"> 
-          {feature.icon}
+        <div ref={iconRef} className="bg-gray-900 p-8 rounded-2xl w-full max-w-md flex items-center justify-center"> 
+          {/* Place AnimatedCube for first and second card, with slider for second */}
+          {idx === 0 ? (
+            <AnimatedCube useModel={true} scale={0.02} />
+          ) : idx === 1 ? (
+            <div className="flex flex-col items-center w-full">
+              <AnimatedCube scale={cubeScale} />
+              <input
+                type="range"
+                min={0.5}
+                max={1.25}
+                step={0.01}
+                value={cubeScale}
+                onChange={e => setCubeScale(Number(e.target.value))}
+                style={{ width: '80%', marginTop: 16 }}
+              />
+              <div style={{ color: '#b9fbc0', fontSize: 14, marginTop: 4 }}>Scale: {cubeScale.toFixed(2)}</div>
+            </div>
+          ) : (
+            feature.icon
+          )}
         </div>
       </div>
       <div className="flex-1 flex flex-col justify-center text-left w-full md:w-1/2 px-8">
@@ -78,6 +102,7 @@ const FeatureCard = ({ feature, idx }: FeatureCardProps) => {
 };
 
 const Features = () => {
+  const featuresRef = useRef<HTMLDivElement>(null);
   return (
     <section id="features" className="py-10 bg-black relative overflow-hidden scroll-mt-80">
       {/* Enhanced gradient spots moved closer to center with reduced opacity */}
@@ -110,11 +135,14 @@ const Features = () => {
           .animate-float-fast { animation: float-fast 8s ease-in-out infinite; }
         `}</style>
       </div>
-      
       <div className="container mx-auto px-4 md:px-6 relative z-10 pt-20">
-        <div className="flex flex-col gap-16">
+        <div ref={featuresRef} className="flex flex-col gap-16">
           {features.map((feature, idx) => (
-            <FeatureCard key={idx} feature={feature} idx={idx} />
+            <FeatureCard
+              key={idx}
+              feature={feature}
+              idx={idx}
+            />
           ))}
         </div>
       </div>
