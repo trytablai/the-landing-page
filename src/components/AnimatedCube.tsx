@@ -25,7 +25,7 @@ function FixedGrid() {
   return (
     <group>
       {/* Tilted grid, fixed camera */}
-      <gridHelper args={[12, 25, '#b9b9b9', '#e0e0e0']} rotation={[-Math.PI / 2.5, 0, 0]} position={[0, -1.2, 0]} />
+      <gridHelper args={[36, 75, '#064e3b', '#065f46']} rotation={[-Math.PI / 2.5, 0, 0]} position={[0, -1.2, 0]} />
     </group>
   );
 }

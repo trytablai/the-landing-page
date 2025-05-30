@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Zap, Settings, FileText, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import AnimatedCube from './AnimatedCube';
+import AnimatedGear from './AnimatedGear';
 
 const features = [{
   icon: <Zap className="h-16 w-16 text-primary" />,
@@ -36,7 +37,8 @@ const FeatureCard = ({ feature, idx, cardRef, iconRef }: FeatureCardProps) => {
   const localRef = useRef<HTMLDivElement>(null);
   const ref = cardRef || localRef;
   const [visible, setVisible] = useState(false);
-  const [cubeScale, setCubeScale] = useState(1);
+  const [gearRadius, setGearRadius] = useState(1);
+  const [gearTeeth, setGearTeeth] = useState(12);
 
   useEffect(() => {
     const observer = new window.IntersectionObserver(
@@ -66,35 +68,60 @@ const FeatureCard = ({ feature, idx, cardRef, iconRef }: FeatureCardProps) => {
       <div className="flex-shrink-0 w-full md:w-1/2 flex items-center justify-center px-8"> 
         <div
           ref={iconRef}
-          className={`bg-gray-900 ${(idx === 0 ) ? ' p-0' : 'p-8'} rounded-2xl w-full max-w-md flex items-center justify-center${(idx === 1 || idx === 0) ? ' overflow-hidden' : ''}`}
+          className={`bg-white ${(idx === 0 ) ? ' p-0' : 'p-8'} rounded-2xl w-full max-w-md flex items-center justify-center${(idx === 1 || idx === 0) ? ' overflow-hidden' : ''}`}
           style={idx === 1 ? { borderRadius: '1rem' } : {}}>
-          {/* Place AnimatedCube for first and second card, with slider for second */}
           {idx === 0 ? (
             <AnimatedCube useModel={true} scale={0.015} />
           ) : idx === 1 ? (
             <div className="flex flex-col items-center w-full">
-              <AnimatedCube scale={cubeScale} />
-              <div className="w-full flex flex-col gap-2 mt-4">
-                <label className="text-gray-200 text-sm mb-1" htmlFor="cube-scale-slider">
-                  Cube Scale
-                </label>
-                <div className="flex items-center gap-3 w-full">
-                  <input
-                    id="cube-scale-slider"
-                    type="range"
-                    min={0.5}
-                    max={1.15}
-                    step={0.01}
-                    value={cubeScale}
-                    onChange={e => setCubeScale(Number(e.target.value))}
-                    className="w-full h-3 rounded-full bg-gray-700 accent-primary outline-none transition-all"
-                    style={{
-                      appearance: 'none',
-                      WebkitAppearance: 'none',
-                    }}
-                  />
-                  <div className="bg-gray-800 text-white rounded-full px-4 py-1 text-sm min-w-[48px] text-center border border-gray-600">
-                    {cubeScale.toFixed(2)}
+              <AnimatedGear radius={gearRadius} teeth={gearTeeth} />
+              <div className="w-full flex flex-col gap-4 mt-4">
+                <div className="flex flex-col gap-2">
+                  <label className="text-gray-200 text-sm mb-1" htmlFor="gear-radius-slider">
+                    Gear Radius
+                  </label>
+                  <div className="flex items-center gap-3 w-full">
+                    <input
+                      id="gear-radius-slider"
+                      type="range"
+                      min={0.5}
+                      max={1.5}
+                      step={0.1}
+                      value={gearRadius}
+                      onChange={e => setGearRadius(Number(e.target.value))}
+                      className="w-full h-3 rounded-full bg-gray-700 accent-primary outline-none transition-all"
+                      style={{
+                        appearance: 'none',
+                        WebkitAppearance: 'none',
+                      }}
+                    />
+                    <div className="bg-gray-800 text-white rounded-full px-4 py-1 text-sm min-w-[48px] text-center border border-gray-600">
+                      {gearRadius.toFixed(1)}
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-gray-200 text-sm mb-1" htmlFor="gear-teeth-slider">
+                    Number of Teeth
+                  </label>
+                  <div className="flex items-center gap-3 w-full">
+                    <input
+                      id="gear-teeth-slider"
+                      type="range"
+                      min={6}
+                      max={24}
+                      step={2}
+                      value={gearTeeth}
+                      onChange={e => setGearTeeth(Number(e.target.value))}
+                      className="w-full h-3 rounded-full bg-gray-700 accent-primary outline-none transition-all"
+                      style={{
+                        appearance: 'none',
+                        WebkitAppearance: 'none',
+                      }}
+                    />
+                    <div className="bg-gray-800 text-white rounded-full px-4 py-1 text-sm min-w-[48px] text-center border border-gray-600">
+                      {gearTeeth}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -105,7 +132,7 @@ const FeatureCard = ({ feature, idx, cardRef, iconRef }: FeatureCardProps) => {
         </div>
       </div>
       <div className="flex-1 flex flex-col justify-center text-left w-full md:w-1/2 px-8">
-        <p className="text-4xl text-white mb-6 leading-tight">
+        <p className="text-5xl text-white mb-6 leading-tight">
           {feature.title.split(' ').map((word, i) => 
             word.toLowerCase() === 'instant' || word.toLowerCase() === 'smart' || word.toLowerCase() === 'export' || word.toLowerCase() === 'engineering' ? 
               <span key={i} className="text-primary">{word} </span> : 
