@@ -1,6 +1,6 @@
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 
 function SpinningCube({ scale = 1 }) {
@@ -22,10 +22,19 @@ function SpinningCube({ scale = 1 }) {
 }
 
 function FixedGrid() {
+  const gridRef = useRef();
+  useEffect(() => {
+    if (gridRef.current) {
+      // @ts-expect-error gridHelper's material is not typed in @react-three/fiber, but is valid in Three.js
+      gridRef.current.material.opacity = 0.4;
+      // @ts-expect-error gridHelper's material is not typed in @react-three/fiber, but is valid in Three.js
+      gridRef.current.material.transparent = true;
+    }
+  }, []);
   return (
     <group>
       {/* Tilted grid, fixed camera */}
-      <gridHelper args={[36, 75, '#064e3b', '#065f46']} rotation={[-Math.PI / 2.5, 0, 0]} position={[0, -1.2, 0]} />
+      <gridHelper ref={gridRef} args={[48, 100, '#064e3b', '#065f46']} rotation={[-Math.PI / 2.5, 0, 0]} position={[0, -1.2, 0]} />
     </group>
   );
 }
