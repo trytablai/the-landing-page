@@ -1,4 +1,4 @@
-import { Twitter, Linkedin, Github, Facebook } from 'lucide-react';
+import { Twitter, Linkedin, Github, Instagram } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -27,17 +27,14 @@ const Footer = () => {
           </div>
           
           <div className="flex items-center space-x-4">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <a href="#" className="text-gray-400 hover:text-primary transition-colors">
               <Twitter size={20} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <a href="https://www.linkedin.com/company/tabl-ai/" className="text-gray-400 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
               <Linkedin size={20} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              <Github size={20} />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              <Facebook size={20} />
+            <a href="https://www.instagram.com/tabl.ai/" className="text-gray-400 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+              <Instagram size={20} />
             </a>
           </div>
         </div>
@@ -47,10 +44,10 @@ const Footer = () => {
             © {currentYear} tabl. All rights reserved.
           </p>
           <div className="flex space-x-4">
-            <a href="#" className="text-gray-400 hover:text-white text-xs">
+            <a href="#" className="text-gray-400 hover:text-primary transition-colors text-xs">
               Privacy Policy
             </a>
-            <a href="#" className="text-gray-400 hover:text-white text-xs">
+            <a href="#" className="text-gray-400 hover:text-primary transition-colors text-xs">
               Terms of Service
             </a>
           </div>
