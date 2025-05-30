@@ -68,9 +68,9 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm">
+    <nav className="w-full fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm" style={{ boxShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
       <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-gray-800 to-transparent"></div>
-      <div className="flex items-center justify-between w-full max-w-5xl mx-auto px-6 py-4">
+      <div className="flex items-center justify-between w-full max-w-7xl mx-auto px-6 py-4">
         {/* Logo */}
         <div className="flex items-center cursor-pointer" onClick={handleLogoClick}>
           <img 
@@ -82,13 +82,13 @@ const Navbar = () => {
         </div>
         {/* Centered Nav Links */}
         <div className="hidden md:flex flex-1 justify-center">
-          <div className="flex items-center space-x-12">
+          <div className="flex items-center space-x-24">
             <a 
               href="#platform-preview" 
               className="text-white hover:text-primary font-thinbold text-base cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
               onClick={handleViewPlatform}
             >
-              View Platform
+              Platform
             </a>
             <a 
               href="#features" 
@@ -109,7 +109,7 @@ const Navbar = () => {
         {/* Join Waitlist Button */}
         <div className="hidden md:flex items-center ml-6">
           <Button 
-            className="rounded-lg bg-secondary flex items-center gap-2 hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300 text-base px-6 py-3 font-thinbold"
+            className="rounded-lg bg-black border border-primary text-white flex items-center gap-2 hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300 text-base px-6 py-3 font-thinbold hover:bg-primary hover:text-black"
             onClick={handleGetStarted}
           >
             Join Waitlist
@@ -131,27 +131,27 @@ const Navbar = () => {
           <div className="flex flex-col space-y-4">
             <a
               href="#platform-preview"
-              className="text-white hover:text-primary font-thinbold text-base cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
+              className="text-white hover:text-primary font-bold text-base cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
               onClick={handleViewPlatform}
             >
-              View Platform
+              Platform
             </a>
             <a
               href="#features"
-              className="text-white hover:text-primary font-thinbold text-base cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
+              className="text-white hover:text-primary font-bold text-base cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
               onClick={handleFeatures}
             >
               Features
             </a>
             <a
               href="#faq"
-              className="text-white hover:text-primary font-thinbold text-base cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
+              className="text-white hover:text-primary font-bold text-base cursor-pointer transition-transform duration-200 hover:scale-110 hover:drop-shadow-glow"
               onClick={handleNewSection}
             >
               FAQ
             </a>
             <Button 
-              className="w-full rounded-lg bg-secondary flex items-center gap-2 hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300 text-base px-6 py-3 font-thinbold"
+              className="w-full rounded-lg bg-black border border-primary text-white flex items-center gap-2 hover:animate-throb hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all duration-300 text-base px-6 py-3 font-thinbold hover:bg-primary hover:text-black"
               onClick={handleGetStarted}
             >
               Join Waitlist
