@@ -68,7 +68,7 @@ const FeatureCard = ({ feature, idx, cardRef, iconRef }: FeatureCardProps) => {
       <div className="flex-shrink-0 w-full md:w-1/2 flex items-center justify-center px-8"> 
         <div
           ref={iconRef}
-          className={` ${(idx === 0 ) ? ' p-0' : 'p-8'} rounded-2xl w-full max-w-full flex items-center justify-center${(idx === 1 || idx === 0) ? ' overflow-hidden' : ''}`}
+          className={` ${(idx === 0 ) ? ' p-0' : 'p-8'} ${idx === 0 ? 'bg-white' : 'bg-black'} rounded-2xl w-full max-w-full flex items-center justify-center${(idx === 1 || idx === 0) ? ' overflow-hidden' : ''}`}
           style={idx === 1 ? { borderRadius: '1rem' } : {}}>
           {idx === 0 ? (
             <AnimatedCube useModel={true} scale={0.015} />
@@ -104,7 +104,7 @@ const FeatureCard = ({ feature, idx, cardRef, iconRef }: FeatureCardProps) => {
       <div className="flex-1 flex flex-col justify-center text-left w-full md:w-1/2 px-8">
         <div className="flex items-center gap-2 mb-2">
           <img src="/images/tablCubeLogo.png" alt="Product Icon" className="h-5 w-5" />
-          <span className="text-xs text-gray-400 font-medium tracking-wide">Feature</span>
+          <span className="text-md text-gray-400 font-medium tracking-wide py-0.5">Feature</span>
         </div>
         <p className="text-5xl text-white mb-4 leading-tight">
           {feature.title.split(' ').map((word, i) => 
