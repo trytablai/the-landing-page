@@ -13,7 +13,7 @@ const features = [{
   icon: <Settings className="h-16 w-16 text-primary" />,
   title: "Smart Parameterization",
   description: "Every generated model comes with intelligent parameters that let you modify dimensions, features, and constraints in real-time. Iterate on your designs without starting from scratch.",
-  image: "/lovable-uploads/24939a9c-98b0-42a4-a4ef-81b6e8d4479f.png"
+  image: "/images/tablParametersLoop.mov"
 }, {
   icon: <FileText className="h-16 w-16 text-primary" />,
   title: "Export Ready Files",
@@ -68,64 +68,34 @@ const FeatureCard = ({ feature, idx, cardRef, iconRef }: FeatureCardProps) => {
       <div className="flex-shrink-0 w-full md:w-1/2 flex items-center justify-center px-8"> 
         <div
           ref={iconRef}
-          className={`bg-white ${(idx === 0 ) ? ' p-0' : 'p-8'} rounded-2xl w-full max-w-full flex items-center justify-center${(idx === 1 || idx === 0) ? ' overflow-hidden' : ''}`}
+          className={` ${(idx === 0 ) ? ' p-0' : 'p-8'} rounded-2xl w-full max-w-full flex items-center justify-center${(idx === 1 || idx === 0) ? ' overflow-hidden' : ''}`}
           style={idx === 1 ? { borderRadius: '1rem' } : {}}>
           {idx === 0 ? (
             <AnimatedCube useModel={true} scale={0.015} />
           ) : idx === 1 ? (
-            <div className="flex flex-col items-center w-full">
-              <AnimatedGear radius={gearRadius} teeth={gearTeeth} />
-              <div className="w-full flex flex-col gap-4 mt-4">
-                <div className="flex flex-col gap-2">
-                  <label className="text-gray-200 text-sm mb-1" htmlFor="gear-radius-slider">
-                    Gear Radius
-                  </label>
-                  <div className="flex items-center gap-3 w-full">
-                    <input
-                      id="gear-radius-slider"
-                      type="range"
-                      min={0.5}
-                      max={1.5}
-                      step={0.1}
-                      value={gearRadius}
-                      onChange={e => setGearRadius(Number(e.target.value))}
-                      className="w-full h-3 rounded-full bg-gray-700 accent-primary outline-none transition-all"
-                      style={{
-                        appearance: 'none',
-                        WebkitAppearance: 'none',
-                      }}
-                    />
-                    <div className="bg-gray-800 text-white rounded-full px-4 py-1 text-sm min-w-[48px] text-center border border-gray-600">
-                      {gearRadius.toFixed(1)}
-                    </div>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="text-gray-200 text-sm mb-1" htmlFor="gear-teeth-slider">
-                    Number of Teeth
-                  </label>
-                  <div className="flex items-center gap-3 w-full">
-                    <input
-                      id="gear-teeth-slider"
-                      type="range"
-                      min={6}
-                      max={24}
-                      step={2}
-                      value={gearTeeth}
-                      onChange={e => setGearTeeth(Number(e.target.value))}
-                      className="w-full h-3 rounded-full bg-gray-700 accent-primary outline-none transition-all"
-                      style={{
-                        appearance: 'none',
-                        WebkitAppearance: 'none',
-                      }}
-                    />
-                    <div className="bg-gray-800 text-white rounded-full px-4 py-1 text-sm min-w-[48px] text-center border border-gray-600">
-                      {gearTeeth}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="w-full h-full object-cover rounded-xl"
+              onError={(e) => {
+                console.error('Video error:', e);
+                const videoElement = e.target as HTMLVideoElement;
+                console.error('Video error details:', {
+                  error: videoElement.error,
+                  networkState: videoElement.networkState,
+                  readyState: videoElement.readyState
+                });
+              }}
+              controls={false}
+              style={{ backgroundColor: 'transparent' }}
+            >
+              <source src="/images/tablParametersLoop.mov" type="video/quicktime" />
+              <source src="/images/tablParametersLoop.mov" type="video/mp4" />
+              <source src="/images/tablParametersLoop.mov" type="video/x-m4v" />
+              Your browser does not support the video tag.
+            </video>
           ) : (
             feature.icon
           )}
