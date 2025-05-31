@@ -60,7 +60,14 @@ const Hero = () => {
                   alt="Fusen Logo" 
                   className="h-5 w-5" 
                 />
-                <span className="text-sm text-gray-300 whitespace-nowrap font-inter">Backed by Fusen</span>
+                <a
+                  href="https://fusen.world/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-300 whitespace-nowrap font-inter"
+                >
+                  Backed by Fusen
+                </a>
               </div>
               <p className="text-4xl md:text-6xl text-white leading-tight mb-4">
                 {`AI CAD Assistant for Engineers Ready to Move Fast.`.split(' ').map((word, i, arr) => (

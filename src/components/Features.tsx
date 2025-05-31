@@ -7,7 +7,7 @@ import AnimatedGear from './AnimatedGear';
 const features = [{
   icon: <Zap className="h-16 w-16 text-primary" />,
   title: "Instant CAD Generation",
-  description: "Transform simple prompts into fully parameterized 3D models in seconds. Our AI understands engineering constraints and generates manufacturable designs with proper tolerances and features.",
+  description: "Transform simple prompts into manufacturable 3D models in seconds.",
   image: "/lovable-uploads/24939a9c-98b0-42a4-a4ef-81b6e8d4479f.png"
 }, {
   icon: <Settings className="h-16 w-16 text-primary" />,
@@ -17,12 +17,12 @@ const features = [{
 }, {
   icon: <FileText className="h-16 w-16 text-primary" />,
   title: "Export Ready Files",
-  description: "Get production-ready STEP and STL files instantly. Compatible with all major CAD software and 3D printers, so you can move seamlessly from design to manufacturing.",
+  description: "Get production-ready STEP and STL files compatible with all major CAD software & 3D printers.",
   image: "/lovable-uploads/24939a9c-98b0-42a4-a4ef-81b6e8d4479f.png"
 }, {
   icon: <Shield className="h-16 w-16 text-primary" />,
   title: "Engineering Intelligence",
-  description: "Built-in engineering agent answers design questions, suggests improvements, and ensures your models meet industry standards. It's like having an experienced engineer by your side.",
+  description: "Built-in engineering agent to answer design questions and suggests improvements.",
   image: "/lovable-uploads/24939a9c-98b0-42a4-a4ef-81b6e8d4479f.png"
 }];
 
@@ -102,7 +102,11 @@ const FeatureCard = ({ feature, idx, cardRef, iconRef }: FeatureCardProps) => {
         </div>
       </div>
       <div className="flex-1 flex flex-col justify-center text-left w-full md:w-1/2 px-8">
-        <p className="text-5xl text-white mb-6 leading-tight">
+        <div className="flex items-center gap-2 mb-2">
+          <img src="/images/tablCubeLogo.png" alt="Product Icon" className="h-5 w-5" />
+          <span className="text-xs text-gray-400 font-medium tracking-wide">Feature</span>
+        </div>
+        <p className="text-5xl text-white mb-4 leading-tight">
           {feature.title.split(' ').map((word, i) => 
             word.toLowerCase() === 'instant' || word.toLowerCase() === 'smart' || word.toLowerCase() === 'export' || word.toLowerCase() === 'engineering' ? 
               <span key={i} className="text-primary">{word} </span> : 
