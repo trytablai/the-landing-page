@@ -68,7 +68,7 @@ const FeatureCard = ({ feature, idx, cardRef, iconRef }: FeatureCardProps) => {
       <div className="flex-shrink-0 w-full md:w-1/2 flex items-center justify-center px-8"> 
         <div
           ref={iconRef}
-          className={`${idx === 0 ? 'bg-white' : 'bg-black'} ${(idx === 0 ) ? ' p-0' : 'p-8'} rounded-2xl w-full max-w-full flex items-center justify-center${(idx === 1 || idx === 0) ? ' overflow-hidden' : ''}`}
+          className={`bg-[#0f0f0f] ${(idx === 0 ) ? ' p-0' : 'p-8'} rounded-2xl w-full max-w-full flex items-center justify-center${(idx === 1 || idx === 0) ? ' overflow-hidden' : ''}`}
           style={idx === 1 ? { borderRadius: '1rem' } : {}}>
           {idx === 0 ? (
             <AnimatedCube useModel={true} scale={0.015} />
