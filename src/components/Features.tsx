@@ -7,7 +7,7 @@ import AnimatedGear from './AnimatedGear';
 const features = [{
   icon: <Zap className="h-16 w-16 text-primary" />,
   title: "Instant CAD Generation",
-  description: "Transform simple prompts into manufacturable 3D models in seconds.",
+  description: "Transform simple prompts into fully parameterized 3D models in seconds. Our AI understands engineering constraints and generates manufacturable designs with proper tolerances and features.",
   image: "/lovable-uploads/24939a9c-98b0-42a4-a4ef-81b6e8d4479f.png"
 }, {
   icon: <Settings className="h-16 w-16 text-primary" />,
@@ -17,8 +17,8 @@ const features = [{
 }, {
   icon: <FileText className="h-16 w-16 text-primary" />,
   title: "Export Ready Files",
-  description: "Get production-ready STEP and STL files compatible with all major CAD software & 3D printers.",
-  image: "/lovable-uploads/24939a9c-98b0-42a4-a4ef-81b6e8d4479f.png"
+  description: "Get production-ready STEP and STL files instantly. Compatible with all major CAD software and 3D printers, so you can move seamlessly from design to manufacturing.",
+  image: "/images/tablDownloadLoop.mov"
 }, {
   icon: <Shield className="h-16 w-16 text-primary" />,
   title: "Engineering Intelligence",
@@ -68,7 +68,7 @@ const FeatureCard = ({ feature, idx, cardRef, iconRef }: FeatureCardProps) => {
       <div className="flex-shrink-0 w-full md:w-1/2 flex items-center justify-center px-8"> 
         <div
           ref={iconRef}
-          className={` ${(idx === 0 ) ? ' p-0' : 'p-8'} ${idx === 0 ? 'bg-white' : 'bg-black'} rounded-2xl w-full max-w-full flex items-center justify-center${(idx === 1 || idx === 0) ? ' overflow-hidden' : ''}`}
+          className={`${idx === 0 ? 'bg-white' : 'bg-black'} ${(idx === 0 ) ? ' p-0' : 'p-8'} rounded-2xl w-full max-w-full flex items-center justify-center${(idx === 1 || idx === 0) ? ' overflow-hidden' : ''}`}
           style={idx === 1 ? { borderRadius: '1rem' } : {}}>
           {idx === 0 ? (
             <AnimatedCube useModel={true} scale={0.015} />
@@ -91,9 +91,33 @@ const FeatureCard = ({ feature, idx, cardRef, iconRef }: FeatureCardProps) => {
               controls={false}
               style={{ backgroundColor: 'transparent' }}
             >
-              <source src="/images/tablParametersLoop.mov" type="video/quicktime" />
-              <source src="/images/tablParametersLoop.mov" type="video/mp4" />
-              <source src="/images/tablParametersLoop.mov" type="video/x-m4v" />
+              <source src={feature.image} type="video/quicktime" />
+              <source src={feature.image} type="video/mp4" />
+              <source src={feature.image} type="video/x-m4v" />
+              Your browser does not support the video tag.
+            </video>
+          ) : idx === 2 ? (
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="w-full h-full object-cover rounded-xl"
+              onError={(e) => {
+                console.error('Video error:', e);
+                const videoElement = e.target as HTMLVideoElement;
+                console.error('Video error details:', {
+                  error: videoElement.error,
+                  networkState: videoElement.networkState,
+                  readyState: videoElement.readyState
+                });
+              }}
+              controls={false}
+              style={{ backgroundColor: 'transparent' }}
+            >
+              <source src={feature.image} type="video/quicktime" />
+              <source src={feature.image} type="video/mp4" />
+              <source src={feature.image} type="video/x-m4v" />
               Your browser does not support the video tag.
             </video>
           ) : (
