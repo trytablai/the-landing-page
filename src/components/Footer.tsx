@@ -27,8 +27,8 @@ const Footer = () => {
           </div>
           
           <div className="flex items-center space-x-4">
-            <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-              <Twitter size={20} />
+          <a href="https://x.com/trytabl/" className="text-gray-400 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+          <Twitter size={20} />
             </a>
             <a href="https://www.linkedin.com/company/tabl-ai/" className="text-gray-400 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
               <Linkedin size={20} />

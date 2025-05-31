@@ -29,19 +29,19 @@ const Download = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden flex items-center justify-center">
+    <div className="min-h-screen bg-[#0f0f0f] relative overflow-hidden flex items-center justify-center">
       <div className="relative z-10 flex flex-col items-center">
         <div className="relative mb-8">
           {/* Progress bar background */}
           <div 
-            className={`rounded-lg border border-primary bg-black overflow-hidden transition-all duration-300 ${
+            className={`rounded-lg border border-primary bg-[#0f0f0f] overflow-hidden transition-all duration-300 ${
               isDownloading ? 'w-64' : 'w-auto'
             }`}
             style={{ transform: 'scale(1.2)' }}
           >
             {/* Progress fill */}
             <div 
-              className="absolute inset-0 bg-primary transition-all duration-50 ease-linear"
+              className="absolute inset-0 bg-primary transition-all duration-50 ease-linear z-0"
               style={{ 
                 width: isDownloading ? `${downloadProgress}%` : '0%',
                 opacity: isDownloading ? 1 : 0
@@ -50,10 +50,10 @@ const Download = () => {
             
             {/* Button text */}
             <Button 
-              className={`relative rounded-lg border-0 flex items-center gap-2 transition-all duration-300 text-base px-6 py-3 font-thinbold ${
+              className={`relative rounded-lg border-0 flex items-center gap-2 transition-all duration-300 text-base px-6 py-3 font-thinbold z-10 ${
                 isDownloading 
-                  ? 'w-64 bg-transparent hover:bg-transparent' 
-                  : 'bg-black hover:bg-primary hover:text-black'
+                  ? 'w-64 bg-[#0f0f0f]/0 hover:bg-[#0f0f0f]/0' 
+                  : 'bg-[#0f0f0f] hover:bg-primary hover:text-black'
               }`}
               style={{ 
                 transform: 'scale(1.2)',
