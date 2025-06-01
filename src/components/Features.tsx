@@ -7,7 +7,7 @@ import AnimatedGear from './AnimatedGear';
 const features = [{
   icon: <Zap className="h-16 w-16 text-primary" />,
   title: "Instant CAD Generation",
-  description: "Transform simple prompts into fully parameterized 3D models in seconds. Our AI understands engineering constraints and generates manufacturable designs with proper tolerances and features.",
+  description: "Transform simple prompts into manufacturable 3D models in seconds.",
   image: "/lovable-uploads/24939a9c-98b0-42a4-a4ef-81b6e8d4479f.png"
 }, {
   icon: <Settings className="h-16 w-16 text-primary" />,
@@ -17,7 +17,7 @@ const features = [{
 }, {
   icon: <FileText className="h-16 w-16 text-primary" />,
   title: "Export Ready Files",
-  description: "Get production-ready STEP and STL files instantly. Compatible with all major CAD software and 3D printers, so you can move seamlessly from design to manufacturing.",
+  description: "Get production-ready STEP and STL files compatible with all major CAD software & 3D printers.",
   image: "/images/tablDownloadLoop.mov"
 }, {
   icon: <Shield className="h-16 w-16 text-primary" />,
