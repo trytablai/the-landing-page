@@ -7,12 +7,12 @@ import AnimatedGear from './AnimatedGear';
 const features = [{
   icon: <Zap className="h-16 w-16 text-primary" />,
   title: "Instant CAD Generation",
-  description: "Transform simple prompts into manufacturable 3D models in seconds.",
+  description: "Transform simple prompts into parameterized and manufacturable 3D models in seconds.",
   image: "/lovable-uploads/24939a9c-98b0-42a4-a4ef-81b6e8d4479f.png"
 }, {
   icon: <Settings className="h-16 w-16 text-primary" />,
   title: "Smart Parameterization",
-  description: "Every generated model comes with intelligent parameters that let you modify dimensions, features, and constraints in real-time. Iterate on your designs without starting from scratch.",
+  description: "Models come with intelligent parameters to adjust dimensions, features, and constraints in real-time.",
   image: "/images/tablParametersLoop.mov"
 }, {
   icon: <FileText className="h-16 w-16 text-primary" />,
@@ -127,7 +127,7 @@ const FeatureCard = ({ feature, idx, cardRef, iconRef }: FeatureCardProps) => {
       </div>
       <div className="flex-1 flex flex-col justify-center text-left w-full md:w-1/2 px-8">
         <div className="flex items-center gap-2 mb-2">
-          <img src="/images/tablCubeLogo.png" alt="Product Icon" className="h-5 w-5" />
+          <img src="/images/tablCubeLogo.png" alt="Product Icon" className="h-6 w-6" />
           <span className="text-md text-gray-400 font-medium tracking-wide py-0.5">Feature</span>
         </div>
         <p className="text-5xl text-white mb-4 leading-tight">
