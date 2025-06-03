@@ -10,26 +10,27 @@ const features = [{
   description: "Transform simple prompts into parameterized and manufacturable 3D models in seconds.",
   image: "/lovable-uploads/24939a9c-98b0-42a4-a4ef-81b6e8d4479f.png"
 }, {
-  icon: <Settings className="h-16 w-16 text-primary" />,
-  title: "Smart Parameterization",
-  description: "Models come with intelligent parameters to adjust dimensions, features, and constraints in real-time.",
-  image: "/images/tablParametersLoop.mov"
+  icon: <FileText className="h-16 w-16 text-primary" />,
+  title: "Feature Tree Generator",
+  description: "Generate complex 3D features automatically with intuitive controls and visualizations.",
+  image: "/images/featureTreeLoop.mov"
+},
 // }, {
 //   icon: <FileText className="h-16 w-16 text-primary" />,
 //   title: "Export Ready Files",
 //   description: "Get production-ready STEP and STL files compatible with all major CAD software & 3D printers.",
 //   image: "/images/tablDownloadLoop.mov"
 // }, {
-}, {
+{
   icon: <Shield className="h-16 w-16 text-primary" />,
   title: "Engineering Intelligence",
   description: "Built-in engineering agent to answer design questions and suggests improvements.",
   image: "/lovable-uploads/24939a9c-98b0-42a4-a4ef-81b6e8d4479f.png"
 }, {
-  icon: <FileText className="h-16 w-16 text-primary" />,
-  title: "Feature Tree Generator",
-  description: "Generate complex 3D features automatically with intuitive controls and visualizations.",
-  image: "/images/featureTreeLoop.mov"
+  icon: <Settings className="h-16 w-16 text-primary" />,
+  title: "Smart Parameterization",
+  description: "Models come with intelligent parameters to adjust dimensions, features, and constraints in real-time.",
+  image: "/images/tablParametersLoop.mov"
 }];
 
 interface FeatureCardProps {
