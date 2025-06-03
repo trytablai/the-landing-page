@@ -14,16 +14,22 @@ const features = [{
   title: "Smart Parameterization",
   description: "Models come with intelligent parameters to adjust dimensions, features, and constraints in real-time.",
   image: "/images/tablParametersLoop.mov"
-}, {
-  icon: <FileText className="h-16 w-16 text-primary" />,
-  title: "Export Ready Files",
-  description: "Get production-ready STEP and STL files compatible with all major CAD software & 3D printers.",
-  image: "/images/tablDownloadLoop.mov"
+// }, {
+//   icon: <FileText className="h-16 w-16 text-primary" />,
+//   title: "Export Ready Files",
+//   description: "Get production-ready STEP and STL files compatible with all major CAD software & 3D printers.",
+//   image: "/images/tablDownloadLoop.mov"
+// }, {
 }, {
   icon: <Shield className="h-16 w-16 text-primary" />,
   title: "Engineering Intelligence",
   description: "Built-in engineering agent to answer design questions and suggests improvements.",
   image: "/lovable-uploads/24939a9c-98b0-42a4-a4ef-81b6e8d4479f.png"
+}, {
+  icon: <FileText className="h-16 w-16 text-primary" />,
+  title: "Feature Tree Generator",
+  description: "Generate complex 3D features automatically with intuitive controls and visualizations.",
+  image: "/images/featureTreeLoop.mov"
 }];
 
 interface FeatureCardProps {
@@ -120,6 +126,30 @@ const FeatureCard = ({ feature, idx, cardRef, iconRef }: FeatureCardProps) => {
               <source src={feature.image} type="video/x-m4v" />
               Your browser does not support the video tag.
             </video>
+          ) : idx === 3 ? (
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="w-full h-full object-cover rounded-xl"
+              onError={(e) => {
+                console.error('Video error:', e);
+                const videoElement = e.target as HTMLVideoElement;
+                console.error('Video error details:', {
+                  error: videoElement.error,
+                  networkState: videoElement.networkState,
+                  readyState: videoElement.readyState
+                });
+              }}
+              controls={false}
+              style={{ backgroundColor: 'transparent' }}
+            >
+              <source src={feature.image} type="video/quicktime" />
+              <source src={feature.image} type="video/mp4" />
+              <source src={feature.image} type="video/x-m4v" />
+              Your browser does not support the video tag.
+            </video>
           ) : (
             feature.icon
           )}
@@ -132,7 +162,7 @@ const FeatureCard = ({ feature, idx, cardRef, iconRef }: FeatureCardProps) => {
         </div>
         <p className="text-5xl text-white mb-4 leading-tight">
           {feature.title.split(' ').map((word, i) => 
-            word.toLowerCase() === 'instant' || word.toLowerCase() === 'smart' || word.toLowerCase() === 'export' || word.toLowerCase() === 'engineering' ? 
+            word.toLowerCase() === 'instant' || word.toLowerCase() === 'smart' || word.toLowerCase() === 'feature' || word.toLowerCase() === 'engineering' ? 
               <span key={i} className="text-primary">{word} </span> : 
               <span key={i}>{word} </span>
           )}
