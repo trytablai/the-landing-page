@@ -25,7 +25,7 @@ const features = [{
   icon: <Shield className="h-16 w-16 text-primary" />,
   title: "Engineering Intelligence",
   description: "Built-in engineering agent to answer design questions and suggests improvements.",
-  image: "/lovable-uploads/24939a9c-98b0-42a4-a4ef-81b6e8d4479f.png"
+  image: "/images/engineeringAgentLoop.mov"
 }, {
   icon: <Settings className="h-16 w-16 text-primary" />,
   title: "Smart Parameterization",
