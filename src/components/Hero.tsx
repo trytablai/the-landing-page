@@ -61,7 +61,7 @@ const Hero = () => {
                   className="h-5 w-5" 
                 />
                 <a
-                  href="https://fusen.world/"
+                  href="https://fusen.world/about"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-gray-300 whitespace-nowrap font-inter"
