@@ -1,4 +1,12 @@
+import { useState } from 'react';
+import { Play } from 'lucide-react';
+
+// Adjust this value to match your navbar's height
+const NAVBAR_HEIGHT = 80; // px
+
 const PlatformPreview = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
     <section id="platform-preview" className="py-10 bg-black relative overflow-hidden scroll-mt-80">
       {/* Gradient spots moved away from edges */}
@@ -18,21 +26,33 @@ const PlatformPreview = () => {
             Watch how engineers transform their ideas into manufacturable 3D models with just a simple prompt.
           </p>
         </div>
-        
-        <div className="w-full max-w-4xl mx-auto bg-card rounded-xl shadow-md overflow-hidden fade-in">
-          <div className="p-2 md:p-4 bg-black/80 backdrop-blur-sm">
-            <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-4 md:p-8 rounded-lg border border-gray-800">
-              <div className="w-full h-80 md:h-96 lg:h-[28rem] bg-gray-900 rounded-md overflow-hidden pointer-events-none">
-                <iframe
-                  className="w-full h-full pointer-events-none"
-                  src="https://www.youtube.com/embed/QNEjm8L7l_o?autoplay=1&mute=1&loop=1&playlist=QNEjm8L7l_o&controls=0&showinfo=0&rel=0&modestbranding=1&autohide=1&fs=0&cc_load_policy=0&iv_load_policy=3&disablekb=1&playsinline=1&start=0&widget_referrer=https%3A%2F%2Fexample.com"
-                  title="tabl Platform Demo"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
+        <div className="w-full max-w-4xl mx-auto fade-in relative">
+          <div className="w-full h-80 md:h-96 lg:h-[28rem] rounded-md overflow-hidden">
+            {!isPlaying ? (
+              <div className="relative w-full h-full">
+                <img
+                  src="/public/images/videoPreview.png"
+                  alt="Video Preview"
+                  className="w-full h-full object-cover"
+                />
+                <div 
+                  className="absolute inset-0 flex items-center justify-center cursor-pointer bg-black/40 hover:bg-black/50 transition-colors"
+                  onClick={() => setIsPlaying(true)}
+                >
+                  <div className="bg-primary/90 hover:bg-primary p-6 rounded-full transition-colors">
+                    <Play className="w-12 h-12 text-white" />
+                  </div>
+                </div>
               </div>
-            </div>
+            ) : (
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/QNEjm8L7l_o?autoplay=1&mute=0&controls=1&showinfo=0&rel=0&modestbranding=1&autohide=1&fs=1&cc_load_policy=0&iv_load_policy=3&disablekb=0&playsinline=1&start=0"
+                title="tabl Platform Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            )}
           </div>
         </div>
       </div>
@@ -41,3 +61,4 @@ const PlatformPreview = () => {
 };
 
 export default PlatformPreview;
+
