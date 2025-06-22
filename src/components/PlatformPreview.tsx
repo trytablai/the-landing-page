@@ -31,7 +31,7 @@ const PlatformPreview = () => {
             {!isPlaying ? (
               <div className="relative w-full h-full">
                 <img
-                  src="/public/images/videoPreview.png"
+                  src="/images/videoPreview.png"
                   alt="Video Preview"
                   className="w-full h-full object-cover"
                 />

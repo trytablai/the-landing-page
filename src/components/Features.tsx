@@ -162,11 +162,32 @@ const FeatureCard = ({ feature, idx, cardRef, iconRef }: FeatureCardProps) => {
           <span className="text-md text-gray-400 font-medium tracking-wide py-0.5">Feature</span>
         </div>
         <p className="text-5xl text-white mb-4 leading-tight">
-          {feature.title.split(' ').map((word, i) => 
-            word.toLowerCase() === 'instant' || word.toLowerCase() === 'smart' || word.toLowerCase() === 'feature' || word.toLowerCase() === 'engineering' ? 
+          {feature.title.split(' ').map((word, i) => {
+            // Handle responsive title for Smart Parameterization
+            if (feature.title === "Smart Parameterization") {
+              return (
+                <span key={i}>
+                  <span className="hidden md:inline">
+                    {word.toLowerCase() === 'smart' ? 
+                      <span className="text-primary">{word} </span> : 
+                      <span>{word} </span>
+                    }
+                  </span>
+                  <span className="md:hidden">
+                    {word.toLowerCase() === 'smart' ? 
+                      <span className="text-primary">{word} </span> : 
+                      <span>{word === 'Parameterization' ? 'Parameters' : word} </span>
+                    }
+                  </span>
+                </span>
+              );
+            }
+            
+            // Original logic for other titles
+            return word.toLowerCase() === 'instant' || word.toLowerCase() === 'smart' || word.toLowerCase() === 'feature' || word.toLowerCase() === 'engineering' ? 
               <span key={i} className="text-primary">{word} </span> : 
-              <span key={i}>{word} </span>
-          )}
+              <span key={i}>{word} </span>;
+          })}
         </p>
         <p className="text-gray-300 text-xl leading-relaxed">{feature.description}</p>
       </div>
