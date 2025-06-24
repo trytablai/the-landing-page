@@ -71,7 +71,7 @@ export default function AnimatedCube({ scale = 1, useModel = false }) {
       {/* Foreground model/cube canvas (interactive) */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 2 }}>
         <Canvas style={{ background: 'transparent', width: '100%', height: '100%' }} camera={{ position: [0, 0, 5], fov: 45 }}>
-          <ambientLight intensity={0.45} />
+          <ambientLight intensity={0.65} />
           <directionalLight position={[5, 5, 5]} intensity={0.7} castShadow />
           <directionalLight position={[-5, -5, -5]} intensity={0.3} color="#b9fbc0" />
           {useModel ? <MyModel scale={scale} /> : <SpinningCube scale={scale} />}
