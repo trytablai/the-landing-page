@@ -47,7 +47,7 @@ const PlatformPreview = () => {
             ) : (
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/QNEjm8L7l_o?autoplay=1&mute=0&controls=1&showinfo=0&rel=0&modestbranding=1&autohide=1&fs=1&cc_load_policy=0&iv_load_policy=3&disablekb=0&playsinline=1&start=0"
+                src="https://www.youtube.com/embed/DlrdCvbRREQ?autoplay=1&mute=0&controls=1&showinfo=0&rel=0&modestbranding=1&autohide=1&fs=1&cc_load_policy=0&iv_load_policy=3&disablekb=0&playsinline=1&start=0"
                 title="tabl Platform Demo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
